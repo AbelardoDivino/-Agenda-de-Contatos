@@ -8,7 +8,7 @@ let enviar = document.getElementById("enviar")
 
 enviar.addEventListener("click",()=>{
 
-    if (inome.value === "") {
+    if (inome.value === "" || inome.value.length  < 8) {
         return alert("erro adicione o nome")
     }
 
@@ -24,148 +24,27 @@ enviar.addEventListener("click",()=>{
         return alert("erro adicione a data")
     }
 
-    
+    // pegar mais de 1 dado e salvalo
 
+  let pessoa = {
+        nome: inome.value,
+        telefone: itelefone.value,
+        email: iemail.value,
+        data: idata.value
+    }
 
-    localStorage.setItem("nome",inputnome.value) // envair para pagina 2
-    localStorage.setItem("telefone",itelefone.value)
-    localStorage.setItem("email",iemail.value)
-    localStorage.setItem("data",idata.value)
+    let lista = JSON.parse(localStorage.getItem("pessoa")) || []
+lista.push(pessoa)
+localStorage.setItem("pessoa", JSON.stringify(lista))
+ window.location.href = "page/agenda.html"
 
-   window.location.href = "page/agenda.html"
+// pegar 1 dado so
+//     localStorage.setItem("nome",inome.value) // envair para pagina 2
+//     localStorage.setItem("telefone",itelefone.value)
+//     localStorage.setItem("email",iemail.value)
+//     localStorage.setItem("data",idata.value)
+
+//    window.location.href = "page/agenda.html"
 
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let maiusc = maiuscula.some(letra => senha.includes(letra))
-// let temnumero = numeros.some(num => senha.includes(num))
-// let temespecial = [...caracters].some(c => senha.includes(c))
-
-// local storege
-
-
-//     localStorage.setItem("nome",inputnome.value) // envair para pagina 2
-//     localStorage.setItem("senha",inputsenha.value)
-
-//    window.location.href = "index2.html"
-
-
-// if (receberdadospagina1) {
-//    let nome = localStorage.getItem("nome")  //pegar da pagina1
-//    let senha = localStorage.getItem("senha")
-
-//    receberdadospagina1.innerHTML = `
-//       <p>:${nome}</p>
-//       <p>:${senha}</p>
-
-//    `
-// }
