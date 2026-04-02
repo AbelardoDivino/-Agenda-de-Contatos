@@ -4,8 +4,13 @@ let itelefone = document.getElementById("itelefone")
 let iemail = document.getElementById("iemail")
 let idata = document.getElementById("idata")
 let enviar = document.getElementById("enviar")
+let receber_array_dados = document.getElementsByClassName("receber_array_dados")
+const verdadoscadastrados = document.getElementsByClassName("verdadoscadastrados")[0];
+let limpar = document.getElementById("limpar")
 
 
+if (enviar) {
+    
 enviar.addEventListener("click",()=>{
 
     if (inome.value === "" || inome.value.length  < 8) {
@@ -38,6 +43,8 @@ lista.push(pessoa)
 localStorage.setItem("pessoa", JSON.stringify(lista))
  window.location.href = "page/agenda.html"
 
+
+
 // pegar 1 dado so
 //     localStorage.setItem("nome",inome.value) // envair para pagina 2
 //     localStorage.setItem("telefone",itelefone.value)
@@ -48,3 +55,20 @@ localStorage.setItem("pessoa", JSON.stringify(lista))
 
 
 })
+
+}
+
+if (verdadoscadastrados) {
+verdadoscadastrados.addEventListener("click",()=>{
+alert("XDDSF")
+console.log("sdasdsd")
+})
+}
+
+if (limpar) {
+    
+limpar.addEventListener("click",()=>{
+    console.log("sdfef")
+    localStorage.removeItem(pessoa)
+})
+}
