@@ -4,7 +4,7 @@ let itelefone = document.getElementById("itelefone")
 let iemail = document.getElementById("iemail")
 let idata = document.getElementById("idata")
 let enviar = document.getElementById("enviar")
-let receber_array_dados = document.getElementsByClassName("receber_array_dados")
+let receber_array_dados = document.getElementsByClassName("receber_array_dados")[0]
 const verdadoscadastrados = document.getElementsByClassName("verdadoscadastrados")[0];
 let limpar = document.getElementById("limpar")
 
@@ -60,13 +60,31 @@ localStorage.setItem("pessoa", JSON.stringify(lista))
 
 if (verdadoscadastrados) {
 verdadoscadastrados.addEventListener("click",()=>{
-alert("XDDSF")
-console.log("sdasdsd")
+
+    let lista = JSON.parse(localStorage.getItem("pessoa")||[])
+
+    receber_array_dados.innerHTML = "" // limpar antes
+
+    lista.forEach(pessoa => {
+        let div = document.createElement("div")
+
+        div.innerHTML = `
+                <p><strong>Nome:</strong> ${pessoa.nome}</p>
+                <p><strong>Telefone:</strong> ${pessoa.telefone}</p>
+                <p><strong>Email:</strong> ${pessoa.email}</p>
+                <p><strong>Data:</strong> ${pessoa.data}</p>
+                <hr>
+            `
+
+            receber_array_dados.appendChild(div)
+    });
+
+console.log("teste")
 })
 }
 
 if (limpar) {
-    
+
 limpar.addEventListener("click",()=>{
     console.log("sdfef")
     localStorage.removeItem(pessoa)

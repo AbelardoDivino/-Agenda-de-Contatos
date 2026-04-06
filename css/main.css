@@ -31,6 +31,16 @@ p{
     width: auto;/* 👈 teste visual */
 }
 
+.receber_array_dados{
+    position: relative;
+    top: 150px;
+    min-width: 100vh;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
 #fotogithub{
     display: flex;
     justify-content: center;
