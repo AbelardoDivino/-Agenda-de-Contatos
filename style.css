@@ -17,5 +17,8 @@ p{
 
 
 .receber_array_dados{
-    
+    display: block;
+    min-height: 100vh;
+    width: auto;
+
 }

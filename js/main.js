@@ -61,7 +61,10 @@ localStorage.setItem("pessoa", JSON.stringify(lista))
 if (verdadoscadastrados) {
 verdadoscadastrados.addEventListener("click",()=>{
 
-    let lista = JSON.parse(localStorage.getItem("pessoa")||[])
+let lista = JSON.parse(localStorage.getItem("pessoa")) || []
+    if (lista.length === 0) {
+       return alert("erro add algo para limpar os dados")
+    }
 
     receber_array_dados.innerHTML = "" // limpar antes
 
@@ -86,7 +89,7 @@ console.log("teste")
 if (limpar) {
 
 limpar.addEventListener("click",()=>{
-    console.log("sdfef")
-    localStorage.removeItem(pessoa)
+    console.log("teste")
+    localStorage.removeItem("pessoa")
 })
 }

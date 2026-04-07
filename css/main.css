@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    margin: 0;
 }
 
 
@@ -31,16 +30,16 @@ p{
     width: auto;/* 👈 teste visual */
 }
 
-.receber_array_dados{
-    position: relative;
-    top: 150px;
-    min-width: 100vh;
+.receber_array_dados {
+    margin-top: 150px;
+    width: 100%;
+    
     display: flex;
-    gap: 10px;
-    justify-content: center;
+    flex-direction: column; /* 🔥 ESSENCIAL */
+    gap: 15px;
+
     align-items: center;
 }
-
 #fotogithub{
     display: flex;
     justify-content: center;
